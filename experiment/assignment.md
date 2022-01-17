@@ -1,0 +1,1 @@
+1. Prove that the point on the rotating link of elliptical trammel traces an ellipse.
