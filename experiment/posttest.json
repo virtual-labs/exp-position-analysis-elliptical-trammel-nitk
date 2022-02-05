@@ -1,39 +1,84 @@
 {
-  "version": 2.0,
-  "questions": [
-    {
-      "question": "This is a Sample Question 1?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+    "version": 2.0,
+    "questions": [
+      {
+        "question": "Which point of the rotating link in elliptical trammel traces a circular path?",
+        "answers": {
+          "a": "mid point",
+          "b": "end point",
+          "c": "both mid point and end poin",
+          "d": "neither mid point nor end point"
+        },
+        "explanations": {
+          "a": "",
+          "b": "",
+          "c": "",
+          "d": ""
+        },
+        "correctAnswer": "a",
+        "difficulty": ""
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      {
+        "question": "The length of rotating link in elliptical trammel is equal to ?",
+        "answers": {
+          "a": "sum of major axis and minor axis",
+          "b": "double of sum of major axis and minor axis",
+          "c": "half of sum of major axis and minor axis",
+          "d": "None of these"
+        },
+        "explanations": {
+          "a": "",
+          "b": "",
+          "c": "",
+          "d": ""
+        },
+        "correctAnswer": "c",
+        "difficulty": ""
       },
-      "correctAnswer": "a",
-      "difficulty": "beginner"
-    },
-    {
-      "question": "This is a Sample Question 2?",
-      "answers": {
-        "a": "answer1",
-        "b": "answer2",
-        "c": "answer3",
-        "d": "answer4"
+      {
+        "question": "End point of rotating link of elliptical trammel travels in a straight line",
+        "answers": {
+          "a": "True",
+          "b": "False"
+        },
+        "explanations": {
+          "a": "",
+          "b": ""
+      
+        },
+        "correctAnswer": "a",
+        "difficulty": ""
       },
-      "explanations": {
-        "a": "Explanation 1  <a href='www.google.com'>here</a>",
-        "b": "Explanation 2",
-        "c": "Explanation 2",
-        "d": "Explanation 2"
+      {
+        "question": "A point on the line obtained by extending the rotating link of elliptical trammel also traces an ellipse ",
+        "answers": {
+          "a": "True",
+          "b": "False"
+        },
+        "explanations": {
+          "a": "",
+          "b": ""
+        },
+        "correctAnswer": "a",
+        "difficulty": ""
       },
-      "correctAnswer": "c",
-      "difficulty": "beginner"
-    }
-  ]
-}
+      {
+          "question": "Ellipse traced by an elliptical trammel has major axis 180mm and minor axis 100mm, what is the diameter of the circle that can be drawn without changing the link lengths of the mechanism",
+          "answers": {
+            "a": "140",
+            "b": "80",
+            "c": "70",
+            "d": "None of these"
+          },
+          "explanations": {
+            "a": "",
+            "b": "",
+            "c": "",
+            "d": ""
+          },
+          "correctAnswer": "a",
+          "difficulty": ""
+      }
+    ]
+  }
+  
