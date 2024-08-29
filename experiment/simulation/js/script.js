@@ -32,6 +32,7 @@ var quickrefCS = false;
 var temp = 0;
 var count = 0;
 var trace = false;
+const rotationButton = document.getElementById('rotationbutton');
 /*
 
 // for trials during development
@@ -71,6 +72,9 @@ function simstate() {
     $("#thetaspinner").spinner("value", theta); //to set simulation parameters on pause
     pauseTime = setInterval("varupdate();", "100");
     document.querySelector(".playPause").textContent = "Play";
+    rotationButton.classList.add('disabled');
+  rotationButton.onclick = tracePlot; // Re-enable the function
+  console.log("disable")
   }
   if (imgfilename == "blueplaydull") {
     time = 0;
@@ -79,7 +83,26 @@ function simstate() {
     simTimeId = setInterval("time=time+0.1; varupdate(); ", "100");
     simstatus = 0;
     document.querySelector(".playPause").textContent = "Pause";
+    rotationButton.classList.remove('disabled');
+  rotationButton.onclick = null; // Disable the function
+  console.log("enable");
+  trace = false;
   }
+}
+
+
+function tracePlot() {
+  trace = !trace;
+
+  // console.log(1);
+  // if (document.getElementById("trace").checked == true) {
+  //   document.getElementById("trace").checked = false;
+  //   pointtrace(ptx, pty, ctx, "blue", 2);
+  // } else {
+  //   document.getElementById("trace").checked = true;
+  //   ptx = [];
+  //   pty = [];
+  // }
 }
 
 // switches state of rotation between 1:CounterClockWise & -1:Clockwise
@@ -211,8 +234,12 @@ function varchange() {
   });
   $("#thetaspinner").on("spin", function (e, ui) {
     $("#thetaslider").slider("value", ui.value);
+    trace = false;
+
   });
   $("#thetaspinner").on("change", function () {
+    trace = false;
+    
     varchange();
   });
 
@@ -235,6 +262,7 @@ function varupdate() {
     theta = theta % 360;
     $("#thetaslider").slider("disable");
     $("#thetaspinner").spinner("disable");
+    
   }
 
   if (simstatus) {
@@ -242,6 +270,8 @@ function varupdate() {
     $("#thetaspinner").spinner("enable");
     theta = $("#thetaspinner").spinner("value");
     temp = Math.abs(lC - l);
+    ptx = [];
+    pty = [];
     printcomment("", 1);
     printcomment("<center>BC=" + temp + "<br>AC=" + lC + "</center>", 2);
   }
@@ -284,24 +314,16 @@ function draw() {
     pointtrace(ptx, pty, ctx, "blue", 2);
     //pointdisp(c,ctx,2,true,1);
   } else {
+    pointtrace(ptx, pty, ctx, "black", 1);
+    console.log("not blue"
+
+    )
     ptx = [];
     pty = [];
   }
   drawdimensions(ctx);
 }
 
-function tracePlot() {
-  trace = !trace;
-  // console.log(1);
-  // if (document.getElementById("trace").checked == true) {
-  //   document.getElementById("trace").checked = false;
-  //   pointtrace(ptx, pty, ctx, "blue", 2);
-  // } else {
-  //   document.getElementById("trace").checked = true;
-  //   ptx = [];
-  //   pty = [];
-  // }
-}
 
 //drawing the guides
 function drawguides(context, cenx, ceny, hwid, vwid, ht, vt, lwidth, scolor) {
