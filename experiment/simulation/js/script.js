@@ -32,7 +32,7 @@ var quickrefCS = false;
 var temp = 0;
 var count = 0;
 var trace = false;
-const rotationButton = document.getElementById('rotationbutton');
+const rotationButton = document.getElementById("rotationbutton");
 /*
 
 // for trials during development
@@ -72,9 +72,9 @@ function simstate() {
     $("#thetaspinner").spinner("value", theta); //to set simulation parameters on pause
     pauseTime = setInterval("varupdate();", "100");
     document.querySelector(".playPause").textContent = "Play";
-    rotationButton.classList.add('disabled');
-  rotationButton.onclick = tracePlot; // Re-enable the function
-  console.log("disable")
+    rotationButton.classList.add("disabled");
+    rotationButton.onclick = tracePlot; // Re-enable the function
+    console.log("disable");
   }
   if (imgfilename == "blueplaydull") {
     time = 0;
@@ -83,13 +83,12 @@ function simstate() {
     simTimeId = setInterval("time=time+0.1; varupdate(); ", "100");
     simstatus = 0;
     document.querySelector(".playPause").textContent = "Pause";
-    rotationButton.classList.remove('disabled');
-  rotationButton.onclick = null; // Disable the function
-  console.log("enable");
-  trace = false;
+    rotationButton.classList.remove("disabled");
+    rotationButton.onclick = null; // Disable the function
+    console.log("enable");
+    trace = false;
   }
 }
-
 
 function tracePlot() {
   trace = !trace;
@@ -235,11 +234,10 @@ function varchange() {
   $("#thetaspinner").on("spin", function (e, ui) {
     $("#thetaslider").slider("value", ui.value);
     trace = false;
-
   });
   $("#thetaspinner").on("change", function () {
     trace = false;
-    
+
     varchange();
   });
 
@@ -262,7 +260,6 @@ function varupdate() {
     theta = theta % 360;
     $("#thetaslider").slider("disable");
     $("#thetaspinner").spinner("disable");
-    
   }
 
   if (simstatus) {
@@ -315,15 +312,12 @@ function draw() {
     //pointdisp(c,ctx,2,true,1);
   } else {
     pointtrace(ptx, pty, ctx, "black", 1);
-    console.log("not blue"
 
-    )
     ptx = [];
     pty = [];
   }
   drawdimensions(ctx);
 }
-
 
 //drawing the guides
 function drawguides(context, cenx, ceny, hwid, vwid, ht, vt, lwidth, scolor) {
