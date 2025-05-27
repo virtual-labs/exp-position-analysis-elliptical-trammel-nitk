@@ -3,7 +3,7 @@
   display: grid;
   grid-template-columns: auto 1fr;
   grid-template-rows: auto 1fr;
-  height: 100vh;
+  max-height: 100vh;
   gap: 0.005rem;
 }
 .title-div-container {
@@ -43,9 +43,10 @@ h1 {
 
 .title-div h1 {
   justify-self: center;
-  font-size: 3.2rem;
+  font-size: 2.4rem;
   color: var(--clr-text-clr);
   text-transform: uppercase;
+  text-align: center;
 }
 
 /* ********************** */
@@ -60,7 +61,7 @@ h1 {
   background-color: #fffcfc;
   box-shadow: 0 1rem 1rem 0 rgba(177, 176, 176, 0.855);
   padding: 1.2rem 1.6rem;
-  margin: 0 0.25rem 0 0.25rem;
+  margin: 0 0.25rem;
   border-radius: 0.9rem;
   left: 0;
   cursor: pointer;
@@ -123,7 +124,7 @@ h1 {
   gap: 0.5rem;
   overflow-y: scroll;
   overflow-x: hidden;
-  /* margin: 0.25rem; */
+  margin: 0 0.25rem;
   margin-bottom: 0;
   border-radius: 0.9rem;
 }
